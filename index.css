@@ -1,0 +1,936 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* 頁面載入中 */
+#preloader {
+    /*  蓋住畫面的背景色 */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    background-color: #f4f4f4;
+    z-index: 3000;
+}
+
+/* 頁面載入中文字 */
+#loading_txt {
+    /* 文字區塊*/
+    font-size: 2rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    letter-spacing: 10px;
+    font-family: 'Libre Baskerville';
+
+    /* 不換行，隱藏超出的文字 */
+    /* 為了做出打字機效果 */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* 打字機動畫，26rem為13個2rem的字 */
+@keyframes loading {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 26rem;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+    margin-bottom: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* 漢堡選單 */
+/* fixed定位在右上角 */
+.hum {
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    width: 45px;
+    height: 45px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* 漢堡的三條線 */
+/* 用bgc、height、width來做 */
+.hum .top-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+}
+
+.hum .center-line {
+    position: absolute;
+    top: 25%;
+    right: 0;
+    width: 80%;
+    height: 2px;
+    background-color: #000;
+}
+
+.hum .bottom-line {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 60%;
+    height: 2px;
+    background-color: #000;
+}
+
+/* 漢堡選單條 */
+.hum-list {
+    /* fixed覆蓋整個畫面 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .9);
+    /* 平時不顯示 */
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    font-family: 'Libre Baskerville';
+}
+
+/* list的上半部區域 */
+.hum-list .nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.hum-list .nav p {
+    margin-bottom: 40px;
+}
+
+.hum-list .nav p a {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #000;
+}
+
+/* folow me */
+.hum-list .text {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+/* 底下的三個sns */
+.hum-list .sns-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hum-list .sns-link div a {
+    color: #000;
+    margin: 0 15px;
+    font-size: 25px;
+}
+
+/* 手機 ml5% + bl */
+.main {
+    border-left: 1px solid #ccc;
+    margin-left: 5%;
+}
+
+@media screen and (min-width: 992px) {
+
+    /* 選單位置修改 */
+    .hum {
+        top: 3%;
+        right: 2%;
+    }
+
+    /* 手機 ml和mr各10% + bl */
+    .main {
+        position: relative;
+        margin-left: 10%;
+        margin-right: 10%;
+        border-left: 1px solid #ccc;
+    }
+
+    /* 側邊移動條 */
+    /* 下拉到特定高度就轉為fixed */
+    .big-follow {
+        position: absolute;
+        top: 120%;
+        left: 2%;
+    }
+
+    .big-follow .sns-link div {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .big-follow .sns-link div a {
+        font-size: 25px;
+        color: #000;
+    }
+
+    /* 側邊條的follow me */
+    .big-follow .text {
+        position: relative;
+        width: fit-content;
+        transform: rotate(90deg) translate(100%);
+        font-family: 'Libre Baskerville';
+        letter-spacing: 2px;
+        font-size: 14px;
+    }
+
+    /* 垂直線 */
+    .big-follow .text::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -60%;
+        width: 50%;
+        height: 1px;
+        background-color: #000;
+    }
+
+}
+
+/* main裡面四個區域 上下padding */
+.main .news,
+.main .profile,
+.main .schedule,
+.main .works {
+    padding: 50px 0;
+}
+
+/* 四個區域title */
+.main .news .title,
+.main .profile .title,
+.main .schedule .title,
+.main .works .title {
+    padding-left: 35px;
+    margin-bottom: 40px;
+    /* 把border推出去 */
+    margin-left: -1px;
+    /* 黑色小線 */
+    border-left: 1px solid #000;
+    letter-spacing: 2px;
+    font-family: 'Libre Baskerville';
+}
+
+/* 四個區域item-group的padding */
+.main .news .item-group,
+.main .works .item-group-all,
+.main .works .item-group-tv,
+.main .works .item-group-movie,
+.main .works .item-group-cm,
+.main .works .item-group-book {
+    padding: 0 35px 30px;
+}
+
+/* 
+因為works總共有5個item-group要互相切換，所以把高度定為最高的item-group的高度
+避免切換時上下跳動
+*/
+.main .works .item-group-all {
+    height: 385px;
+}
+
+/* 其他item-group先隱藏 */
+.main .works .item-group-tv,
+.main .works .item-group-movie,
+.main .works .item-group-cm,
+.main .works .item-group-book {
+    display: none;
+}
+
+/* 手機版，超出去的地方先隱藏 */
+.main .works .item-group-all,
+.main .works .item-group-tv,
+.main .works .item-group-movie,
+.main .works .item-group-cm,
+.main .works .item-group-book {
+    overflow: hidden;
+}
+
+/* item的樣式 */
+.main .news .item,
+.main .works .item {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    font-family: 'Noto Sans JP';
+}
+
+/* date和cate區域 */
+.main .news .item .top,
+.main .works .item .top {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.main .news .item .cate,
+.main .works .item .cate {
+    position: relative;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+/* 分隔date和cate的黑線 */
+.main .news .item .cate::before,
+.main .works .item .cate::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 1px;
+    height: 65%;
+    border-left: 1px solid #000;
+}
+
+.main .news p a,
+.main .profile p a,
+.main .schedule p a,
+.main .works p a {
+    color: #000;
+    transition: .5s;
+}
+
+/* 觸碰時變色 */
+.main .news p:hover a,
+.main .profile p:hover a,
+.main .schedule p:hover a,
+.main .works p:hover a {
+    opacity: .5;
+}
+
+/* view-all的樣式 */
+.main .news .view-all a,
+.main .profile .view-all a,
+.main .schedule .view-all a,
+.main .works .view-all a {
+    position: relative;
+    padding: 0 35px;
+    font-family: 'Libre Baskerville';
+}
+
+/* 觸碰到view-all不變色 */
+.main .news .view-all:hover a,
+.main .profile .view-all:hover a,
+.main .schedule .view-all:hover a,
+.main .works .view-all:hover a {
+    opacity: 1;
+}
+
+/* 偽元素生成兩條底線，一條細一條粗，粗的width先設為0隱藏 */
+.main .news .view-all a::after,
+.main .news .view-all a::before,
+.main .profile .view-all a::after,
+.main .profile .view-all a::before,
+.main .schedule .view-all a::after,
+.main .schedule .view-all a::before,
+.main .works .view-all a::after,
+.main .works .view-all a::before {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: 18%;
+    width: 70%;
+    height: 1px;
+    background-color: #000;
+}
+
+/* 粗的 */
+.main .news .view-all a::before,
+.main .profile .view-all a::before,
+.main .schedule .view-all a::before,
+.main .works .view-all a::before {
+    width: 0;
+    /* 要先設置2px，不要等hover的時候才設置 */
+    height: 2px;
+    /* 變化時間 */
+    transition: .5s;
+}
+
+/* 如果觸碰到view-all粗的線就變為w70% */
+.main .news .view-all:hover a::before,
+.main .profile .view-all:hover a::before,
+.main .schedule .view-all:hover a::before,
+.main .works .view-all:hover a::before {
+    height: 2px;
+    width: 70%;
+}
+
+
+.main .profile .pic {
+    /* 把照片推出去 */
+    margin-left: -35px;
+    width: 100%;
+}
+
+/* 個人訊息區 */
+.main .profile .info {
+    padding: 35px;
+    font-family: 'Noto Sans JP';
+}
+
+.main .profile .info h3 {
+    margin-bottom: 25px;
+}
+
+.main .profile .info h3 span {
+    position: relative;
+    font-size: 16px;
+    padding-left: 25px;
+}
+
+/* 偽元素做漢字和假名之間的斜線 */
+.main .profile .info h3 span::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(135deg);
+    height: 1px;
+    width: 15%;
+    background-color: #000;
+}
+
+.main .profile .info p {
+    margin: 10px 0;
+}
+
+.main .schedule .title {
+    margin-bottom: 80px;
+}
+
+/* flex水平對齊並換行 */
+.main .works .tabBar {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 0 50px 30px;
+}
+
+/* 每個w33.333%，一排3個 */
+.all,
+.tv,
+.movie,
+.cm,
+.book {
+    position: relative;
+    width: 33.333%;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Libre Baskerville';
+    cursor: pointer;
+}
+
+/* ::after做細底線，保持顯示*/
+.all::after,
+.tv::after,
+.movie::after,
+.cm::after,
+.book::after {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+}
+
+/* ::before做粗底線 w0% 先隱藏*/
+.all::before,
+.tv::before,
+.movie::before,
+.cm::before,
+.book::before {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #000;
+    transition: .5s;
+}
+
+/* 觸碰時變為w100% */
+.all:hover::before,
+.tv:hover::before,
+.movie:hover::before,
+.cm:hover::before,
+.book:hover::before {
+    width: 100%;
+}
+
+/* 給jq使用，點擊時就添加這個class */
+/* 讓被點擊的底線保持粗底線 */
+.all.change::before,
+.tv.change::before,
+.movie.change::before,
+.cm.change::before,
+.book.change::before {
+    width: 100%;
+}
+
+/* 每個title加入打字機效果 */
+.main .profile .title h4,
+.main .schedule .title h4,
+.main .news .title h4,
+.rem10_5_h4,
+.rem7_5_h4 {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* 打字機動畫 */
+/* w是字體大小乘上數量 */
+/* 這裡是1.5rem */
+
+/* news */
+@keyframes news_h4 {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 6rem;
+    }
+}
+
+/* schedule */
+@keyframes schedule_h4 {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 12rem;
+    }
+}
+
+/* 打字機動畫 */
+/* 
+works
+*/
+@keyframes rem7_5_h4 {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 7.5rem;
+    }
+}
+
+/* 打字機動畫 */
+/* 
+profile
+yt
+twitter 
+*/
+@keyframes rem10_5_h4 {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 10.5rem;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+
+    /* 改為flex水平對齊 */
+    .main .news {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .main .news,
+    .main .profile,
+    .main .schedule,
+    .main .works {
+        padding: 100px 0;
+    }
+
+    /* 刪除ml、pl、bl，並水平 */
+    .main .news .title,
+    .main .profile .title,
+    .main .schedule .title,
+    .main .works .title {
+        display: flex;
+        justify-content: center;
+        width: 30%;
+        margin-left: 0;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    /* 內容item垂直排列 */
+    .main .news .content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main .news .content .item-group {
+        margin-bottom: 10px;
+    }
+
+    /* 將item裡的date、cate和text都水平 */
+    .main .news .item {
+        display: flex;
+    }
+
+    .main .news .item .text {
+        margin-left: 25px;
+    }
+
+    /* 桌機的view-all處在右下角 */
+    .main .news .view-all,
+    .main .schedule .view-all,
+    .main .works .view-all {
+        align-self: flex-end
+    }
+
+    /* profile裡面有三塊，between排列 */
+    .main .profile {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* 把原本的ml改成0，並縮小圖 */
+    .main .profile .pic {
+        margin-left: 0;
+        width: 50%;
+    }
+
+    .main .profile .info p {
+        margin: 10px 0;
+    }
+
+    /* view-all處在右下角 */
+    .main .profile .view-all {
+        align-self: flex-end;
+    }
+
+    /* between排列 */
+    .main .schedule {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* 因為沒有其他內容，用mb推出高度 */
+    .main .schedule .title {
+        margin-bottom: 120px;
+    }
+
+
+    .main .works {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .main .works .content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 70%;
+    }
+
+    /* tabBar w100% 不換行 */
+    .main .works .tabBar {
+        flex-wrap: nowrap;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* flex水平排列 */
+    .main .works .item-group-all {
+        display: flex;
+    }
+
+    /*
+     between排列5個item-group，最高的item-group高度為205px，先預設
+    預防切換後上下跳動
+    */
+    .main .works .item-group-all,
+    .main .works .item-group-tv,
+    .main .works .item-group-movie,
+    .main .works .item-group-cm,
+    .main .works .item-group-book {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 50px 60px;
+        height: 205px;
+    }
+
+    /* 寬度用calc，減去的部分用作間距 */
+    .main .works .item {
+        border-bottom: none;
+        width: calc(33% - 30px);
+    }
+
+    /* 垂直線 */
+    .main .tateline {
+        position: absolute;
+        top: 0;
+        left: 30%;
+        width: 1px;
+        height: 100%;
+        background-color: rgba(204, 204, 204, .5);
+        z-index: -1;
+    }
+
+}
+
+/* 水平分隔線 */
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+}
+
+/* sns左右m推5% */
+.sns {
+    margin: 0 5%;
+}
+
+/* 兩區域設置bl和br */
+.sns .yt,
+.sns .twitter {
+    padding: 30px 0;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+標題、文字、mark置中 .sns .title,
+.sns p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* title字形和字與字的間距 */
+.sns .title {
+    letter-spacing: 3px;
+    font-family: 'Libre Baskerville';
+}
+
+/* mark樣式 */
+.sns .mark {
+    background-color: transparent;
+    font-size: 50px;
+}
+
+.sns .link a {
+    position: relative;
+    color: #000;
+    padding-left: 15px;
+    transition: .5s;
+}
+
+.sns .link:hover a {
+    opacity: .5;
+}
+
+/* 前方三角形 */
+.sns .link a::before {
+    content: '▸';
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #000;
+}
+
+/* 手機 讓影片推出去 */
+.video {
+    margin: 0 calc(-5% - 18px)
+}
+
+/* 消除推特上下方的m */
+.twitter-tweet {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* 將推特置中，並設置最大高度，超過就oevrflow的滾輪 */
+.sns .twitter .web {
+    display: flex;
+    justify-content: center;
+    max-height: 540px;
+    overflow: auto;
+}
+
+@media screen and (min-width: 992px) {
+
+    /* 桌機 左右m 10% */
+    .sns {
+        position: relative;
+        margin: 0 10%;
+    }
+
+    /* sns區的垂直線 right: 35%*/
+    .sns .tateline {
+        position: absolute;
+        top: 0;
+        right: 35%;
+        width: 1px;
+        height: 100%;
+        background-color: rgba(204, 204, 204, .5);
+        z-index: -1;
+    }
+
+    /* 各區文字和嵌入內容水平 */
+    .sns .yt,
+    .sns .twitter {
+        width: 100%;
+        display: flex;
+    }
+
+    .sns .yt {
+        padding: 60px 0;
+    }
+
+    /* 文字內容垂直排列並置中，w35% */
+    .sns .yt .text,
+    .sns .twitter .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 35%;
+        order: 1;
+    }
+
+    /* title盒子大小設為與內容同寬 */
+    .sns .yt .text .title,
+    .sns .twitter .text .title {
+        width: fit-content;
+    }
+
+    /* 嵌入內容區域w65%，並且order設0讓它排在左邊前面 */
+    .sns .yt .video,
+    .sns .twitter .web {
+        width: 65%;
+        order: 0;
+    }
+
+    /* 刪除影片margin，不然版面會跑掉 */
+    .sns .yt .video {
+        margin: 0;
+    }
+
+    /* yt影片的高度 */
+    .sns .yt .video iframe {
+        height: 540px;
+    }
+
+
+}
+
+footer {
+    padding: 80px 35px 30px;
+    text-align: center;
+    font-family: 'Libre Baskerville';
+}
+
+/* nav內容，可換行 */
+footer .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+footer .nav p {
+    margin: 0 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+footer p a {
+    color: #000;
+    text-align: center;
+    transition: .5s;
+}
+
+footer p:hover a {
+    color: #ccc;
+}
+
+footer .follow {
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+
+footer .follow .text {
+    margin-bottom: 25px;
+}
+
+/* 三個sns圖示 */
+footer .sns-link {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+footer .sns-link div a {
+    margin: 0 15px;
+    color: #000;
+}
+
+
+footer .copyright {
+    color: #999;
+    font-size: 14px;
+    font-family: 'Noto Sans JP';
+}
+
+@media screen and (min-width: 992px) {
+    footer {
+        padding: 160px 35px 50px;
+    }
+
+    footer .nav {
+        margin-bottom: 160px;
+    }
+
+}

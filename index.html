@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./fontawesome-free-5.15.3-web/css/all.css">
+    <link rel="stylesheet" href="./slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="./slick-1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="./bootstrap-4.6.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./index.css">
+    <title>Shiraishimai-website</title>
+</head>
+
+<body>
+
+    <!-- 載入頁面中 fixed-->
+    <div id="preloader">
+        <div id="loading_txt">MAI SHIRAISHI</div>
+    </div>
+
+    <!-- 頭部輪播 -->
+    <header>
+        <!-- 手機 輪播 -->
+        <div class="small-slick d-block d-lg-none">
+            <div class="small-slick-item">
+                <!-- 長圖 -->
+                <img src="./small_img/c1ce3f76b413a072ff393be72e1b8-01.jpg" alt="">
+                <!-- 文字 absolute-->
+                <h1 class="first-text">
+                    MAI SHIRAISHI
+                    <span>OFFICIAL WEBSITE</span>
+                </h1>
+            </div>
+            <div class="small-slick-item">
+                <img src="./small_img/4d8d8153e23d7aa91835ab8508fe2-01.jpg" alt="">
+                <h1>
+                    MAI SHIRAISHI
+                    <span>OFFICIAL WEBSITE</span>
+                </h1>
+            </div>
+            <div class="small-slick-item">
+                <img src="./small_img/4deed068e55236bea13d9cc9e11cc-01.jpg" alt="">
+                <h1>
+                    MAI SHIRAISHI
+                    <span>OFFICIAL WEBSITE</span>
+                </h1>
+            </div>
+        </div>
+
+        <!-- 桌機 輪播-->
+        <div class="big-slick d-none d-lg-block">
+            <div class="big-slick-item first-item">
+                <!-- 大圖 -->
+                <img src="./big_img/c1ce3f76b413a072ff393be72e1b8.jpg" alt="">
+                <!-- 文字 absolute-->
+                <h1 class="first-text">
+                    MAI SHIRAISHI <br>
+                    <span>OFFICIAL WEBSITE</span>
+                </h1>
+            </div>
+            <div class="big-slick-item second-item">
+                <img src="./big_img/4d8d8153e23d7aa91835ab8508fe2.jpg" alt="">
+                <h1>
+                    MAI SHIRAISHI <br>
+                    <span>OFFICIAL WEBSITE</span>
+                </h1>
+            </div>
+            <div class="big-slick-item third-item">
+                <img src="./big_img/4deed068e55236bea13d9cc9e11cc.jpg" alt="">
+                <h1>
+                    MAI SHIRAISHI <br>
+                    <span>OFFICIAL WEBSITE</span>
+                </h1>
+            </div>
+        </div>
+
+
+
+
+    </header>
+
+    <!-- 漢堡選單 3個div用absolute做成 -->
+    <div class="hum">
+        <div class="top-line"></div>
+        <div class="center-line"></div>
+        <div class="bottom-line"></div>
+    </div>
+
+    <!-- 漢堡選單條 -->
+    <!-- 平時隱藏 -->
+    <div class="hum-list">
+        <!-- nva區 -->
+        <div class="nav">
+            <p><a href="#">HOME</a></p>
+            <p><a href="#">NEWS</a></p>
+            <p><a href="#">PROFILE</a></p>
+            <p><a href="#">SCHEDULE</a></p>
+            <p><a href="#">WORKS</a></p>
+            <p><a href="#">CONTACT</a></p>
+        </div>
+
+        <!-- sns區 -->
+        <!-- fontawesome做成 -->
+        <div class="follow">
+            <div class="text">
+                <p>
+                    FOLLOW ME
+                </p>
+            </div>
+            <div class="sns-link">
+                <div class="twitter">
+                    <a href="https://twitter.com/shiraishi_staff"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="yt">
+                    <a href="https://www.youtube.com/channel/UCUApURCve0BEqv6Sa9x_OJg"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+                <div class="ig">
+                    <a href="https://www.instagram.com/m.shiraishi.official/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 側邊的follow條 -->
+    <!-- 平時是absolute  往下拉到一定高度變為fixed -->
+    <div class="big-follow d-none d-lg-block">
+        <div class="sns-link">
+            <div class="twitter">
+                <a href="https://twitter.com/shiraishi_staff"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="yt">
+                <a href="https://www.youtube.com/channel/UCUApURCve0BEqv6Sa9x_OJg"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="ig">
+                <a href="https://www.instagram.com/m.shiraishi.official/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <!-- rotate轉90度-->
+        <div class="text">
+            <p>
+                FOLLOW ME
+            </p>
+        </div>
+    </div>
+
+
+    <!-- 主區域 -->
+    <div class="container-fluid">
+        <!-- 手機時ml5% -->
+        <!-- 桌機時主體ml和mr10% -->
+        <!-- bl線 -->
+        <div class="main">
+            <!-- news -->
+            <div class="news">
+                <!-- 桌機時title占30%width -->
+                <div class="title">
+                    <h4>NEWS</h4>
+                </div>
+                <div class="content fade-area">
+                    <div class="item-group">
+                        <div class="item">
+                            <div class="top">
+                                <div class="date">
+                                    <p>2021.08.17</p>
+                                </div>
+                                <div class="cate">
+                                    <p>MEDIA</p>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <p>
+                                    <a href="#">
+                                        公式YouTubeチャンネルにて8/19正午より誕生日前日記念Live決定！
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="top">
+                                <div class="date">
+                                    <p>2021.06.16</p>
+                                </div>
+                                <div class="cate">
+                                    <p>MEDIA</p>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <p>
+                                    <a href="#">
+                                        テレビ朝日系金曜ナイトドラマ「漂着者」出演決定！
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="top">
+                                <div class="date">
+                                    <p>2021.06.12</p>
+                                </div>
+                                <div class="cate">
+                                    <p>MEDIA</p>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <p>
+                                    <a href="#">
+                                        Amazon Prime Video、新CM「好きな時間へ、ひとっ飛び。」に白石麻衣が起用されました！
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="view-all">
+                        <p>
+                            <a href="#">
+                                VIEW ALL
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- profile -->
+            <div class="profile">
+                <div class="title d-block d-lg-none">
+                    <h4>PROFILE</h4>
+                </div>
+                <!-- 手機直接用-margin推出去 -->
+                <div class="pic fade-area">
+                    <img src="./small_img/54da1e9e7568a487984d13f53d1d2.jpg" alt="">
+                </div>
+                <!-- 文字區 -->
+                <div class="info">
+                    <div class="title d-none d-lg-block">
+                        <h4 class="">PROFILE</h4>
+                    </div>
+                    <div class="content fade-area">
+                        <h3>白石 麻衣 <span>しらいし まい</span></h3>
+                        <p>生年月日：1992年8月20日</p>
+                        <p>血液型：A型</p>
+                        <p>星座：しし座</p>
+                        <p>身長：162cm</p>
+                    </div>
+                </div>
+                <div class="view-all">
+                    <p>
+                        <a href="#">
+                            VIEW ALL
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- 基本上沒內容，只有標題和VIEW ALL -->
+            <div class="schedule ">
+                <div class="title">
+                    <h4>SCHEDULE</h4>
+                </div>
+                <div class="view-all fade-area">
+                    <p>
+                        <a href="#">
+                            VIEW ALL
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- works -->
+            <div class="works ">
+                <!-- 標題 -->
+                <div class="title">
+                    <h4 class="rem7_5_h4">WORKS</h4>
+                </div>
+                
+                <div class="content fade-area">
+                    <!-- 上方選擇類別 -->
+                    <div class="tabBar">
+                        <p class="all change">ALL</p>
+                        <p class="tv">TV</p>
+                        <p class="movie">MOVIE</p>
+                        <p class="cm">CM</p>
+                        <p class="book">BOOK</p>
+                    </div>
+
+                    <!-- item -->
+                    <div class="item-group-cate">
+                        <div class="item-group-all">
+                            <div class="item">
+                                <div class="top">
+                                    <div class="date">
+                                        <p>2021.09.01</p>
+                                    </div>
+                                    <div class="cate">
+                                        <p>CM</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <a href="#">
+                                            Amazon prime video「好きな時間へ、ひとっ飛び。」
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="top">
+                                    <div class="date">
+                                        <p>2021.09.01</p>
+                                    </div>
+                                    <div class="cate">
+                                        <p>CM</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <a href="#">
+                                            アサヒビール「アサヒスーパードライ」
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="top">
+                                    <div class="date">
+                                        <p>2021.09.01</p>
+                                    </div>
+                                    <div class="cate">
+                                        <p>CM</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <a href="#">
+                                            資生堂「SENKA(専科)」
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-group-tv">
+                            <div class="item">
+                                <div class="top">
+                                    <div class="date">
+                                        <p>2019.12.25</p>
+                                    </div>
+                                    <div class="cate">
+                                        <p>TV</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <a href="#">
+                                            フジテレビ系 FODオリジナルドラマ「乃木坂シネマズ～STORY of 46～-街の子ら-」 由梨役(2019)
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="top">
+                                    <div class="date">
+                                        <p>2021.09.01</p>
+                                    </div>
+                                    <div class="cate">
+                                        <p>TV</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <a href="#">
+                                            フジテレビ系「絶対零度～未然犯罪潜入捜査～」第8話ゲスト 砂田繭美役(2018)
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="top">
+                                    <div class="date">
+                                        <p>2021.09.01</p>
+                                    </div>
+                                    <div class="cate">
+                                        <p>TV</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <a href="#">
+                                            資生堂「SENKA(専科)」
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-group-movie">
+                            <div class="item">
+                                <div class="top">
+                                    <div class="date">
+                                        <p>2020.02.21</p>
+                                    </div>
+                                    <div class="cate">
+                                        <p>MOVIE</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <a href="#">
+                                            「スマホを落としただけなのに 囚われの殺人鬼」 松田美乃里役（2020年）
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="top">
+                                    <div class="date">
+                                        <p>2017.09.22</p>
+                                    </div>
+                                    <div class="cate">
+                                        <p>MOVIE</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <a href="#">
+                                            「あさひなぐ」 宮路真春役（2017年）
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="top">
+                                    <div class="date">
+                                        <p>2016.09.22</p>
+                                    </div>
+                                    <div class="cate">
+                                        <p>MOVIE</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <a href="#">
+                                            「闇金ウシジマくん Part3」 麻生りな役（2016年）
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-group-cm">
+                            <div class="item">
+                                <div class="top">
+                                    <div class="date">
+                                        <p>2021.09.01</p>
+                                    </div>
+                                    <div class="cate">
+                                        <p>CM</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <a href="#">
+                                            Amazon prime video「好きな時間へ、ひとっ飛び。」
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="top">
+                                    <div class="date">
+                                        <p>2021.09.01</p>
+                                    </div>
+                                    <div class="cate">
+                                        <p>CM</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <a href="#">
+                                            アサヒビール「アサヒスーパードライ」
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="top">
+                                    <div class="date">
+                                        <p>2021.09.01</p>
+                                    </div>
+                                    <div class="cate">
+                                        <p>CM</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <a href="#">
+                                            資生堂「SENKA(専科)」
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-group-book">
+                            <div class="item">
+                                <div class="top">
+                                    <div class="date">
+                                        <p>2020.10.21</p>
+                                    </div>
+                                    <div class="cate">
+                                        <p>BOOK</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <a href="#">
+                                            「白石麻衣 乃木坂46卒業記念メモリアルマガジン」：講談社(2020)
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="top">
+                                    <div class="date">
+                                        <p>2017.02.07</p>
+                                    </div>
+                                    <div class="cate">
+                                        <p>BOOK</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <a href="#">
+                                            2nd写真集「パスポート」：講談社(2017)
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="top">
+                                    <div class="date">
+                                        <p>2015.01.23</p>
+                                    </div>
+                                    <div class="cate">
+                                        <p>BOOK</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <a href="#">
+                                            1stフォトブック「MAI STYLE」：主婦の友社(2015)
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="view-all">
+                        <p>
+                            <a href="#">
+                                VIEW ALL
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- main桌機的垂直線 absolute left30%-->
+            <div class="tateline d-none d-lg-block"></div>
+
+        </div>
+    </div>
+
+    <!-- 橫線 分隔上下兩區-->
+    <div class="line"></div>
+
+    <!-- sns區 -->
+    <div class="container-fluid">
+
+        <div class="sns">
+            <!-- yt區 -->
+            <!-- bl和br線 -->
+            <div class="yt">
+                <!-- 文字區 -->
+                <div class="text">
+                    <h4 class="title rem10_5_h4">YouTube</h4>
+                    <p class="mark fade-area"><i class="fab fa-youtube"></i></p>
+                    <p class="link fade-area">
+                        <a href="https://www.youtube.com/channel/UCUApURCve0BEqv6Sa9x_OJg">my channel【白石麻衣 公式】
+                        </a>
+                    </p>
+                </div>
+
+                <!-- 影片區 -->
+                <!-- 嵌入yt影片 -->
+                <!-- 影片用-mr和-ml來推出去 -->
+                <div class="video fade-area">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/qMzKrmV5joY"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+            </div>
+
+            <!-- 格線 -->
+            <div class="line"></div>
+
+            <!-- bl和br線 -->
+            <div class="twitter">
+                <!-- 文字區 -->
+                <div class="text">
+                    <h4 class="title rem10_5_h4">Twitter</h4>
+                    <p class="mark fade-area"><i class="fab fa-twitter"></i></p>
+                    <p class="link fade-area">
+                        <a href="https://twitter.com/shiraishi_staff">@shiraishi_staff
+                        </a>
+                    </p>
+                </div>
+
+                <!-- 嵌入twitter連結 -->
+                <div class="web fade-area">
+                    <blockquote class="twitter-tweet">
+                        <p lang="ja" dir="ltr">
+                            このあと、23:45〜「漂着者」第４話です📰<br>(※一部地域を除きます)<br><br>今夜は白石麻衣演じる詠美に危険が迫ります😨⚡️<br><br>そして今日のオフショットは虹と一緒に撮れたものです🌈どうぞ✨<br><br>この後、是非ご覧ください☺️
+                            <a href="https://t.co/NcKUYgTawB">https://t.co/NcKUYgTawB</a> <a
+                                href="https://t.co/TGe4CtD7FR">pic.twitter.com/TGe4CtD7FR</a>
+                        </p>&mdash; 白石麻衣STAFF (@shiraishi_staff) <a
+                            href="https://twitter.com/shiraishi_staff/status/1428722521310826505?ref_src=twsrc%5Etfw">August
+                            20, 2021</a>
+                    </blockquote>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+
+            </div>
+
+            <!-- sns桌機的垂直線 absolute rigth35%-->
+            <div class="tateline  d-none d-lg-block"></div>
+
+        </div>
+    </div>
+
+    <!-- 分隔線 -->
+    <div class="line"></div>
+
+    <footer class="fade-area">
+        <div class="container">
+            <div class="nav">
+                <p><a href="#">HOME</a></p>
+                <p><a href="#">NEWS</a></p>
+                <p><a href="#">PROFILE</a></p>
+                <p><a href="#">SCHEDULE</a></p>
+                <p><a href="#">WORKS</a></p>
+                <p><a href="#">CONTACT</a></p>
+            </div>
+
+            <!--sns連結 手機顯示 桌機隱藏-->
+            <div class="follow d-block d-lg-none">
+                <div class="text">
+                    <p>
+                        FOLLOW ME
+                    </p>
+                </div>
+                <div class="sns-link">
+                    <div class="twitter">
+                        <a href="https://twitter.com/shiraishi_staff"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="yt">
+                        <a href="https://www.youtube.com/channel/UCUApURCve0BEqv6Sa9x_OJg"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="ig">
+                        <a href="https://www.instagram.com/m.shiraishi.official/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy;乃木坂46LLC</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="./jquery-3.6.0/jquery-3.6.0.js"></script>
+    <script src="./bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+    <script src="./slick-1.8.1/slick/slick.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
