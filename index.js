@@ -5,17 +5,18 @@ $(function () {
     // 頁面載入中
     if ($(window).width() > 992) {
         // 灰白背景
-        $("#preloader").delay(2000).fadeOut("slow");
+        // delay時間與輪播圖的播放速度些微錯開，避免一進入頁面輪播圖就剛好切換
+        $("#preloader").delay(2200).fadeOut("slow");
         // 文字，delay:2s，打字機效果，13個字*2rem，文字置中
-        $("#loading_txt").delay(2000).css({
+        $("#loading_txt").delay(2200).css({
             'width': '26rem',
             'animation': 'loading 1.5s steps(13,end)',
             'text-align': 'center'
         }).fadeOut("slow");
     } else {
-        $("#preloader").delay(2000).fadeOut("slow");
+        $("#preloader").delay(2200).fadeOut("slow");
         // 手機版調小文字大小
-        $("#loading_txt").delay(2000).css({
+        $("#loading_txt").delay(2200).css({
             'width': '26rem',
             'font-size': '1.5rem',
             'animation': 'loading 1.5s steps(13,end)',
