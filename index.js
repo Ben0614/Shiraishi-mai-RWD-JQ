@@ -279,21 +279,22 @@ $(function () {
         let index = $(this).index();
 
         // 點到該p時，讓index相同的item-group顯示，並且高度設為385px，其他item-group隱藏
-        $('.item-group-cate>div').eq(index).css({'min-height': '385px','display': 'block'}).show().siblings().hide();
+
+        // 手機
+        $('.item-group-cate.mobile>div').eq(index).css({
+            'display': 'block',
+            'min-height': '385px',
+        }).show().siblings().hide();
 
         // 桌機
-        if ($(window).width() >= 992) {
-            // 改為flex，高度設為205px
-            $('.item-group-cate>div').eq(index).css({
-                'display': 'flex',
-                'min-height': '205px'
-            })
-        }
+        $('.item-group-cate.computer>div').eq(index).css({
+            'display': 'flex',
+            'min-height': '205px'
+        }).show().siblings().hide();
 
-        
-          // 添加class="change",讓被點擊的p的底下保持粗黑線
-            $(this).addClass('change').siblings().removeClass('change');
 
+        // 添加class="change",讓被點擊的p的底下保持粗黑線
+        $(this).addClass('change').siblings().removeClass('change');
 
     })
 

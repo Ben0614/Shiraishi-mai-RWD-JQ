@@ -251,6 +251,16 @@ a:hover {
     font-family: 'Libre Baskerville';
 }
 
+/* 手機版顯示 */
+.item-group-cate.mobile {
+    display: block;
+}
+
+/* 手機版隱藏 */
+.item-group-cate.computer {
+    display: none;
+}
+
 /* 四個區域item-group的padding */
 .main .news .item-group,
 .main .works .item-group-all,
@@ -675,6 +685,16 @@ twitter
         width: 70%;
     }
 
+    /* 桌機版隱藏 */
+    .item-group-cate.mobile {
+        display: none;
+    }
+
+    /* 桌機版flex */
+    .item-group-cate.computer {
+        display: flex;
+    }
+
     /* tabBar w100% 不換行 */
     .main .works .tabBar {
         flex-wrap: nowrap;
@@ -741,7 +761,7 @@ twitter
     border-left: 1px solid #ccc;
 }
 
-標題、文字、mark置中 .sns .title,
+/* 標題、文字、mark置中 .sns .title, */
 .sns p {
     text-align: center;
     margin-bottom: 30px;
