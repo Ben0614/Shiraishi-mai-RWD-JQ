@@ -101,7 +101,7 @@ $(function () {
             // 恢復原來的absolute和位置
             $('.big-follow').css({
                 'position': 'absolute',
-                'top': '120%'
+                'top': '105%'
             })
         }
 

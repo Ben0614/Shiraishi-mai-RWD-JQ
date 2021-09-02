@@ -172,6 +172,10 @@ a:hover {
 }
 
 @media screen and (min-width: 992px) {
+    header {
+        position: relative;
+    }
+
 
     /* 選單位置修改 */
     .hum {
@@ -191,7 +195,7 @@ a:hover {
     /* 下拉到特定高度就轉為fixed */
     .big-follow {
         position: absolute;
-        top: 120%;
+        top: 105%;
         left: 2%;
     }
 
