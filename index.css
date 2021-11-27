@@ -16,6 +16,11 @@
     z-index: 3000;
 }
 
+#preloader.change {
+    opacity: 0;
+    z-index: -1;
+}
+
 /* 頁面載入中文字 */
 #loading_txt {
     /* 文字區塊*/
@@ -26,11 +31,17 @@
     transform: translate(-50%, -100%);
     letter-spacing: 10px;
     font-family: 'Libre Baskerville';
+    animation: loading 1.5s steps(13, end);
+    text-align: center;
 
     /* 不換行，隱藏超出的文字 */
     /* 為了做出打字機效果 */
     white-space: nowrap;
     overflow: hidden;
+}
+
+#loading_txt.change{
+    font-size: 1.5rem;
 }
 
 /* 打字機動畫，26rem為13個2rem的字 */
@@ -107,6 +118,12 @@ a:hover {
     background-color: #000;
 }
 
+.hum .top-line,
+.hum .center-line,
+.hum .bottom-line{
+    transition: .3s;
+}
+
 /* 漢堡選單條 */
 .hum-list {
     /* fixed覆蓋整個畫面 */
@@ -117,12 +134,14 @@ a:hover {
     height: 100%;
     background-color: rgba(255, 255, 255, .9);
     /* 平時不顯示 */
-    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    z-index: -1;
+    opacity: 0;
+    transition: .3s;
     font-family: 'Libre Baskerville';
+    
 }
 
 /* list的上半部區域 */
@@ -131,6 +150,7 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 15%;
     margin-bottom: 40px;
 }
 
@@ -228,6 +248,11 @@ a:hover {
         width: 50%;
         height: 1px;
         background-color: #000;
+    }
+
+    .hum-list .nav {
+        margin-top: 10%;
+       
     }
 
 }
@@ -623,6 +648,11 @@ twitter
         display: flex;
         flex-direction: column;
     }
+
+    .fade-area{
+        opacity:0;
+    }
+
 
     .main .news .content .item-group {
         margin-bottom: 10px;
