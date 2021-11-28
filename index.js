@@ -7,14 +7,14 @@ if (window.innerWidth > 992) {
     setTimeout(function () {
         // 灰白背景
         preloader.classList.add('change')
-    }, 2200)
+    }, 2500)
 } else {
     // 手機版調小文字大小
     loading_txt.classList.add('change')
     setTimeout(function () {
         // 灰白背景
         preloader.classList.add('change')
-    }, 2200)
+    }, 2500)
 }
 
 const hum = document.querySelector('.hum')
