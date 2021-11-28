@@ -19,6 +19,7 @@
 #preloader.change {
     opacity: 0;
     z-index: -1;
+    transition: .3s
 }
 
 /* 頁面載入中文字 */

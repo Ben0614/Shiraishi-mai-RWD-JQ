@@ -256,7 +256,7 @@ $(function () {
     // 小輪播
     $('.small-slick').slick({
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 1800,
         fade: true,
         speed: 800,
     });
@@ -264,7 +264,7 @@ $(function () {
     // 大輪播
     $('.big-slick').slick({
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 1800,
         fade: true,
         speed: 800,
     });
