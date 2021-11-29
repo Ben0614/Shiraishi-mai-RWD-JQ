@@ -181,11 +181,11 @@ window.addEventListener('scroll', function () {
     } else {
         // 手機
         if ((document.documentElement.scrollTop + window.innerHeight) >= (work_title.offsetTop + work_title.offsetParent.offsetTop)) {
-            schedule_title.style.width = '7.5rem'
-            schedule_title.style.animation = 'rem7_5_h4 .6s steps(4,end)'
-            schedule_title.style.textAlign = 'left'
+            work_title.style.width = '7.5rem'
+            work_title.style.animation = 'rem7_5_h4 .6s steps(4,end)'
+            work_title.style.textAlign = 'left'
         } else {
-            schedule_title.style.animation = 'none'
+            work_title.style.animation = 'none'
         }
     }
 
